@@ -1,5 +1,5 @@
 import { tv } from "tailwind-variants";
-import { colorVariants } from "@/utils/variants";
+import { colorVariants } from "@/lib/variants";
 
 export const button = tv({
   base: "flex items-center justify-center gap-2 font-semibold bg-primary text-white transition-all border border-transparent outline-none ring-offset-2 focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50 disabled:pointer-events-none disabled:appearance-none active:enabled:translate-y-px",
@@ -28,11 +28,11 @@ export const button = tv({
     },
     variant: {
       primary: "",
-      outline: "border-2 bg-transparent",
+      outline: "border-2",
       flat: "border-transparent",
-      light: "border-transparent",
-      ghost: "border-2 bg-transparent",
-      text: "p-0 border-transparent bg-transparent",
+      light: "",
+      ghost: "border-2",
+      text: "p-0",
     },
     rounded: {
       sm: "rounded-sm",

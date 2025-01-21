@@ -54,10 +54,10 @@ export default function ButtonPage() {
               Primary
             </Button>
             <Button variant='outline'>Outline</Button>
-            <Button variant='flat' color='secondary'>
+            <Button variant='flat'>
               Flat
             </Button>
-            <Button variant='light' color='neutral'>
+            <Button variant='light'>
               Light
             </Button>
             <Button variant='ghost' color='info'>
