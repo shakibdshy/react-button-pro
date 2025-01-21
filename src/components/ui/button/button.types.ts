@@ -3,7 +3,34 @@ import { button } from "./button.styles";
 
 export type ButtonVariants = VariantProps<typeof button>;
 
-export interface CommonProps extends ButtonVariants {
+export interface AriaButtonProps {
+  /**
+   * Provides an accessible label for the button
+   */
+  "aria-label"?: string;
+  /**
+   * Associates the button with a description for screen readers
+   */
+  "aria-describedby"?: string;
+  /**
+   * Indicates if the button is pressed (for toggle buttons)
+   */
+  "aria-pressed"?: boolean;
+  /**
+   * Indicates if the button controls an expandable element
+   */
+  "aria-expanded"?: boolean;
+  /**
+   * References the ID of the element controlled by the button
+   */
+  "aria-controls"?: string;
+  /**
+   * Indicates if the button triggers a popup element
+   */
+  "aria-haspopup"?: boolean | "menu" | "dialog" | "listbox" | "tree" | "grid";
+}
+
+export interface CommonProps extends ButtonVariants, AriaButtonProps {
   className?: string;
   isDisabled?: boolean;
   isLoading?: boolean;
@@ -27,7 +54,7 @@ export interface ButtonAsButtonProps extends CommonProps {
 }
 
 // Define props specific to when 'as' is 'a'
-type OmitCommonProps = Omit<CommonProps, "children">;
+type OmitCommonProps = Omit<CommonProps, "children" | keyof AriaButtonProps>;
 
 // Exclude 'color' from AnchorHTMLAttributes before extending
 type AnchorPropsWithoutColor = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'color'>;

@@ -40,6 +40,7 @@ export function useButton(props: UseButtonProps) {
       : { ...commonProps, ...rest, type, disabled },
     isAnchor,
     isLoading,
+    isDisabled,
     spinner,
     spinnerColor: spinnerColorValue,
     children,
