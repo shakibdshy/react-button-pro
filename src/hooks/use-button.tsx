@@ -19,6 +19,9 @@ export function useButton(props: UseButtonProps) {
     size,
     rounded,
     children,
+    hasRipple = true,
+    rippleColor,
+    rippleDuration,
     ...rest
   } = props;
 
@@ -44,5 +47,8 @@ export function useButton(props: UseButtonProps) {
     spinner,
     spinnerColor: spinnerColorValue,
     children,
+    hasRipple,
+    rippleColor,
+    rippleDuration,
   };
 }

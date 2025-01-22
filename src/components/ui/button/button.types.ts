@@ -3,34 +3,22 @@ import { button } from "./button.styles";
 
 export type ButtonVariants = VariantProps<typeof button>;
 
+export interface RippleOptions {
+  hasRipple?: boolean;
+  rippleColor?: string;
+  rippleDuration?: number;
+}
+
 export interface AriaButtonProps {
-  /**
-   * Provides an accessible label for the button
-   */
   "aria-label"?: string;
-  /**
-   * Associates the button with a description for screen readers
-   */
   "aria-describedby"?: string;
-  /**
-   * Indicates if the button is pressed (for toggle buttons)
-   */
   "aria-pressed"?: boolean;
-  /**
-   * Indicates if the button controls an expandable element
-   */
   "aria-expanded"?: boolean;
-  /**
-   * References the ID of the element controlled by the button
-   */
   "aria-controls"?: string;
-  /**
-   * Indicates if the button triggers a popup element
-   */
   "aria-haspopup"?: boolean | "menu" | "dialog" | "listbox" | "tree" | "grid";
 }
 
-export interface CommonProps extends ButtonVariants, AriaButtonProps {
+export interface CommonProps extends ButtonVariants, AriaButtonProps, RippleOptions {
   className?: string;
   isDisabled?: boolean;
   isLoading?: boolean;
