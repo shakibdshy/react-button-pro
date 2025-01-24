@@ -2,6 +2,7 @@ import { button } from "@/components/ui/button/button.styles";
 import { ButtonProps } from "@/components/ui/button/button.types";
 import { useCallback } from "react";
 import { ButtonHTMLAttributes } from "react";
+import cn from "@/lib/utils";
 
 export type UseButtonProps = ButtonProps;
 
@@ -26,7 +27,7 @@ export function useButton(props: UseButtonProps) {
   } = props;
 
   const buttonClassName = useCallback(() => {
-    return button({ variant, size, rounded, color, className });
+    return cn(button({ variant, size, rounded, color }), className);
   }, [variant, size, rounded, color, className]);
 
   const isAnchor = as === "a";

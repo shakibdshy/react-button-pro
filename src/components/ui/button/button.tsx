@@ -4,6 +4,7 @@ import Link, { LinkProps } from "next/link";
 import Spinner from "@/components/ui/spinner/spinner";
 import { useButton, UseButtonProps } from "@/hooks/use-button";
 import { ButtonHTMLAttributes, KeyboardEvent, forwardRef, Ref, useState, MouseEvent } from "react";
+import cn from "@/lib/utils";
 
 interface RippleStyle {
   x: number;
@@ -93,7 +94,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, UseButtonProps>
 
     const commonProps = {
       ...ariaProps,
-      className: `${buttonProps.className} relative overflow-hidden ${isPressed ? "animate-press" : ""}`,
+      className: cn(buttonProps.className, "relative overflow-hidden", isPressed ? "animate-press" : ""),
     };
 
     const renderRipples = ripples.map((ripple) => (

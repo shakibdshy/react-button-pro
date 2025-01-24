@@ -1,6 +1,7 @@
-import { ClassValue, clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { cx } from "class-variance-authority";
+import { ClassValue } from "class-variance-authority/types";
+import { twMerge } from "tailwind-merge";
 
 export default function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+  return twMerge(cx(inputs));
 }
