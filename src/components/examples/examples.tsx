@@ -35,6 +35,19 @@ export default function ButtonPage() {
         </div>
 
         <div className="py-5">
+          <h3 className="mb-5">Rounded</h3>
+          <div className="flex items-center gap-5">
+            <Button rounded="sm">Button sm</Button>
+            <Button rounded="md">Button md</Button>
+            <Button rounded="lg">Button lg</Button>
+            <Button rounded="xl">Button xl</Button>
+            <Button rounded="2xl">Button 2xl</Button>
+            <Button rounded="full">Button full</Button>
+            <Button rounded="none">Button none</Button>
+          </div>
+        </div>
+
+        <div className="py-5">
           <h3 className="mb-5">Color</h3>
           <div className="flex items-center gap-5">
             <Button>Button Primary</Button>
@@ -125,7 +138,7 @@ export default function ButtonPage() {
             <Button isLoading spinnerColor="white">
               Loading...
             </Button>
-            <Button variant="outline" isLoading color="neutral">
+            <Button variant="outline" isLoading spinnerColor="white">
               Processing...
             </Button>
           </div>
