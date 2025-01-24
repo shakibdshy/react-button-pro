@@ -12,16 +12,16 @@ export const button = cva(
         primary:
           "border-primary bg-primary text-base-white hover:bg-primary-900 hover:border-primary-900 focus-visible:ring-primary/50",
         secondary:
-          "border-secondary bg-secondary text-primary hover:bg-secondary-400 focus-visible:ring-secondary/50",
-        info: "border-info bg-info text-base-white hover:bg-info-900 focus-visible:ring-primary/50",
+          "border-secondary bg-secondary text-secondary-900 hover:bg-secondary-400 focus-visible:ring-secondary/50",
+        info: "border-info bg-info text-base-white hover:bg-info-900 hover:border-info-900 focus-visible:ring-info/50",
         neutral:
-          "border-neutral bg-neutral text-base-white hover:bg-neutral-800 focus-visible:ring-neutral/50",
+          "border-neutral bg-neutral text-base-white hover:bg-neutral-800 hover:border-neutral-800 focus-visible:ring-neutral/50",
         error:
-          "border-error bg-error text-base-white hover:bg-error-900 focus-visible:ring-error/50",
+          "border-error bg-error text-base-white hover:bg-error-900 hover:border-error-900 focus-visible:ring-error/50",
         warning:
-          "border-warning bg-warning text-base-white hover:bg-warning-800 focus-visible:ring-warning/50",
+          "border-warning bg-warning text-base-white hover:bg-warning-800 hover:border-warning-800 focus-visible:ring-warning/50",
         success:
-          "border-success bg-success text-base-white hover:bg-success-900 focus-visible:ring-success/50",
+          "border-success bg-success text-base-white hover:bg-success-900 hover:border-success-900 focus-visible:ring-success/50",
       },
       size: {
         sm: "px-4 py-1.5 text-sm",
@@ -122,8 +122,7 @@ export const button = cva(
       {
         variant: "flat",
         color: "primary",
-        className:
-          "bg-primary-50 text-primary hover:bg-primary-100 hover:border-transparent",
+        className: colorVariants.flat.primary,
       },
       {
         variant: "flat",

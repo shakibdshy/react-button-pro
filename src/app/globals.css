@@ -126,14 +126,16 @@
     --color-info-900: 226deg 64% 33%;
     --color-info-950: 226deg 57% 21%;
 
-    --background: 0deg 0% 100%;
+    --background: 33.3,100%,96.5%;
   }
 
-  /* @media (prefers-color-scheme: dark) {
-    :root {
-      --background: 221deg 43% 11%;
-    }
-  } */
+  [data-theme="dark"] {
+    --background: 150,3.3%,11.8%;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+  }
 
   .h1,
   .h2,

@@ -9,11 +9,11 @@ export default function FloatingToggle() {
   return (
     <div style={{ position: "fixed", bottom: "20px", right: "20px" }}>
       {theme === "light" ? (
-        <Button variant="flat" onClick={() => setTheme("dark")}>
+        <Button color="secondary" onClick={() => setTheme("dark")}>
           <IconBrightnessDown />
         </Button>
       ) : (
-        <Button variant="flat" onClick={() => setTheme("light")}>
+        <Button color="secondary" onClick={() => setTheme("light")}>
           <IconBrightnessFilled />
         </Button>
       )}
