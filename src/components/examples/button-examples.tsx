@@ -12,7 +12,7 @@ export default function ButtonExamples() {
         <div className="flex flex-wrap gap-4">
           <Button>Default Button</Button>
           <Button isDisabled>Disabled Button</Button>
-          <Button isLoading>Loading Button</Button>
+          <Button isLoading spinnerColor="white">Loading Button</Button>
           <Button as="a" href="/some-path">Link Button</Button>
         </div>
       </section>
