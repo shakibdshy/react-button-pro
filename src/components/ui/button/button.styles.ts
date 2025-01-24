@@ -27,8 +27,8 @@ export const button = cva(
         sm: "px-4 py-1.5 text-sm",
         md: "px-4 py-2.5 text-sm",
         lg: "px-6 py-3 text-base",
-        xl: "px-6 py-3.5 text-base",
-        "2xl": "px-6 py-4 text-lg",
+        xl: "px-7 py-3.5 text-base",
+        "2xl": "px-9 py-4 text-lg",
       },
       variant: {
         primary: "",

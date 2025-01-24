@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# React Button Pro
 
-## Getting Started
+A fully accessible, customizable React button component with ripple effect, loading state, and modern styling.
 
-First, run the development server:
+[![npm version](https://img.shields.io/npm/v/@shakibdshy/react-button-pro.svg)](https://www.npmjs.com/package/@shakibdshy/react-button-pro)
+[![npm downloads](https://img.shields.io/npm/dm/@shakibdshy/react-button-pro.svg)](https://www.npmjs.com/package/@shakibdshy/react-button-pro)
+[![License](https://img.shields.io/npm/l/@shakibdshy/react-button-pro.svg)](https://github.com/yourusername/react-button-pro/blob/main/LICENSE)
+
+## Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install @shakibdshy/react-button-pro
+
+or
+
+pnpm add @shakibdshy/react-button-pro
+
+or
+
+bun add @shakibdshy/react-button-pro
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```jsx
+import React from "react";
+import { Button } from "@shakibdshy/react-button-pro";
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+function App() {
+  return (
+    <div>
+      <Button color="primary" size="md">
+        Click Me
+      </Button>
+    </div>
+  );
+}
+export default App;
+```
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Initial release (v1.0.0)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🎨 Initial release with multiple color and size variants
+- 📚 Comprehensive documentation and examples
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+### Core Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- ✨ Modern, lightweight button component
+- 🔄 Controlled & Uncontrolled modes support
+- 👥 Button group for managing multiple buttons
+- 🎭 Customizable ripple effect
+- ⌨️ Full keyboard navigation support
+- 🎨 CSS-in-JS with Tailwind variants
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Styling & Customization
+
+- 🎨 Multiple built-in color variants
+  - Primary, Secondary, Success, Warning, Error, Info, Neutral
+- 📐 Five size variants (sm, md, lg, xl, 2xl)
+- 🔲 Configurable border radius
+- 💅 Works with both Tailwind CSS and custom CSS
+- 🎯 Custom styles without breaking accessibility
+
+### Accessibility & UX
+
+- ♿️ WAI-ARIA compliant
+- 🔍 Screen reader friendly
+- 🎯 Focus management and indicators
+- 📱 Responsive and touch-friendly
+- 🖱️ Click area optimization
+- 🔄 Smooth transitions
+
+### Developer Experience
+
+- 📝 Written in TypeScript with full type definitions
+- 🏃‍♂️ Tree-shakeable and optimized bundle
+- 📚 Comprehensive documentation and examples
+- 🔧 Easy to integrate and customize
+- 📦 Small bundle size

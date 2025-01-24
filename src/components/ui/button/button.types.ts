@@ -1,4 +1,4 @@
-import { VariantProps } from "tailwind-variants";
+import { VariantProps } from "class-variance-authority";
 import { button } from "./button.styles";
 
 export type ButtonVariants = VariantProps<typeof button>;
