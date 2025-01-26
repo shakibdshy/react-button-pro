@@ -4,7 +4,7 @@ import cn from "@/lib/utils";
 
 export const button = cva(
   cn(
-    "flex items-center justify-center gap-2 font-semibold bg-primary text-white transition-all border border-transparent outline-none ring-offset-2 focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50 disabled:pointer-events-none disabled:appearance-none"
+    "flex items-center justify-center gap-2 font-semibold bg-primary text-white transition-all border-2 border-transparent outline-none ring-offset-2 focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50 disabled:pointer-events-none disabled:appearance-none"
   ),
   {
     variants: {
@@ -12,7 +12,7 @@ export const button = cva(
         primary:
           "border-primary bg-primary text-base-white hover:bg-primary-900 hover:border-primary-900 focus-visible:ring-primary/50",
         secondary:
-          "border-secondary bg-secondary text-secondary-900 hover:bg-secondary-400 focus-visible:ring-secondary/50",
+          "border-secondary bg-secondary text-secondary-900 hover:bg-secondary-400 hover:border-secondary-400 focus-visible:ring-secondary/50",
         info: "border-info bg-info text-base-white hover:bg-info-900 hover:border-info-900 focus-visible:ring-info/50",
         neutral:
           "border-neutral bg-neutral text-base-white hover:bg-neutral-800 hover:border-neutral-800 focus-visible:ring-neutral/50",
