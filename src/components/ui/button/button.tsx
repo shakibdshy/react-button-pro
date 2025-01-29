@@ -2,9 +2,21 @@
 
 import Link, { LinkProps } from "next/link";
 import Spinner from "@/components/ui/spinner/spinner";
-import { useButton, UseButtonProps } from "@/hooks/use-button";
-import { ButtonHTMLAttributes, KeyboardEvent, forwardRef, Ref, useState, MouseEvent } from "react";
+import { useButton } from "@/hooks/use-button";
+import {
+  ButtonHTMLAttributes,
+  KeyboardEvent,
+  forwardRef,
+  Ref,
+  useState,
+  MouseEvent,
+} from "react";
 import cn from "@/lib/utils";
+import {
+  ButtonProps,
+  ButtonAsButtonProps,
+  ButtonAsAnchorProps,
+} from "./button.types";
 
 interface RippleStyle {
   x: number;
@@ -13,7 +25,7 @@ interface RippleStyle {
   id: number;
 }
 
-const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, UseButtonProps>(
+const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   (props, ref) => {
     const {
       buttonProps,
@@ -26,7 +38,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, UseButtonProps>
       hasRipple,
       rippleColor,
       rippleDuration,
-    } = useButton(props);
+    } = useButton(props as ButtonAsButtonProps & ButtonAsAnchorProps);
 
     const [isPressed, setIsPressed] = useState(false);
     const [ripples, setRipples] = useState<RippleStyle[]>([]);
@@ -45,7 +57,9 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, UseButtonProps>
       setIsPressed(false);
     };
 
-    const createRipple = (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+    const createRipple = (
+      e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+    ) => {
       if (!hasRipple || isDisabled) return;
 
       const element = e.currentTarget;
@@ -72,7 +86,9 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, UseButtonProps>
       }, rippleDuration || 850);
     };
 
-    const handleMouseDown = (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+    const handleMouseDown = (
+      e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+    ) => {
       setIsPressed(true);
       createRipple(e);
     };
@@ -94,7 +110,11 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, UseButtonProps>
 
     const commonProps = {
       ...ariaProps,
-      className: cn(buttonProps.className, "relative overflow-hidden", isPressed ? "animate-press" : ""),
+      className: cn(
+        buttonProps.className,
+        "relative overflow-hidden",
+        isPressed ? "animate-press" : ""
+      ),
     };
 
     const renderRipples = ripples.map((ripple) => (
@@ -106,8 +126,8 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, UseButtonProps>
           top: ripple.y,
           width: ripple.size,
           height: ripple.size,
-          transform: 'translate(-50%, -50%) scale(0)',
-          backgroundColor: rippleColor || 'rgba(255, 255, 255, 0.35)',
+          transform: "translate(-50%, -50%) scale(0)",
+          backgroundColor: rippleColor || "rgba(255, 255, 255, 0.35)",
           animation: `ripple ${rippleDuration || 850}ms ease-out`,
           opacity: 0.5,
         }}

@@ -1,8 +1,8 @@
-import { button } from "@/components/ui/button/button.styles";
+import { button } from "@shakibdshy/tailwind-theme";
 import { ButtonProps } from "@/components/ui/button/button.types";
+import cn from "@/lib/utils";
 import { useCallback } from "react";
 import { ButtonHTMLAttributes } from "react";
-import cn from "@/lib/utils";
 
 export type UseButtonProps = ButtonProps;
 
@@ -33,14 +33,14 @@ export function useButton(props: UseButtonProps) {
   const isAnchor = as === "a";
   const disabled = isLoading || isDisabled;
   const spinnerColorValue = spinnerColor || color;
-  
+
   const commonProps = {
     className: buttonClassName(),
   };
-  
+
   return {
-    buttonProps: isAnchor 
-      ? { ...commonProps, ...rest } 
+    buttonProps: isAnchor
+      ? { ...commonProps, ...rest }
       : { ...commonProps, ...rest, type, disabled },
     isAnchor,
     isLoading,

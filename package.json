@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@shakibdshy/tailwind-theme": "^1.0.5",
     "@tabler/icons-react": "^3.28.1",
     "class-variance-authority": "^0.7.1",
     "next": "15.1.5",

@@ -1,5 +1,5 @@
 import { VariantProps } from "class-variance-authority";
-import { button } from "./button.styles";
+import { button } from "@shakibdshy/tailwind-theme";
 
 export type ButtonVariants = VariantProps<typeof button>;
 
@@ -18,7 +18,10 @@ export interface AriaButtonProps {
   "aria-haspopup"?: boolean | "menu" | "dialog" | "listbox" | "tree" | "grid";
 }
 
-export interface CommonProps extends ButtonVariants, AriaButtonProps, RippleOptions {
+export interface CommonProps
+  extends ButtonVariants,
+    AriaButtonProps,
+    RippleOptions {
   className?: string;
   isDisabled?: boolean;
   isLoading?: boolean;
@@ -45,12 +48,17 @@ export interface ButtonAsButtonProps extends CommonProps {
 type OmitCommonProps = Omit<CommonProps, "children" | keyof AriaButtonProps>;
 
 // Exclude 'color' from AnchorHTMLAttributes before extending
-type AnchorPropsWithoutColor = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'color'>;
+type AnchorPropsWithoutColor = Omit<
+  React.AnchorHTMLAttributes<HTMLAnchorElement>,
+  "color"
+>;
 
-export interface ButtonAsAnchorProps extends AnchorPropsWithoutColor, OmitCommonProps {
+export interface ButtonAsAnchorProps
+  extends AnchorPropsWithoutColor,
+    OmitCommonProps {
   as: "a";
   href: string;
 }
 
 // Combine the two interfaces into a union type
-export type ButtonProps = ButtonAsButtonProps | ButtonAsAnchorProps; 
+export type ButtonProps = ButtonAsButtonProps | ButtonAsAnchorProps;
